@@ -6,3 +6,6 @@ so totally 10^8/100 => 10^6 operations available
 
 O(N^3) maximum possible order since 100=>(10^2)^3=6
 
+upper bound O(N^3)
+lower bound: 
+
