@@ -7,5 +7,46 @@ so totally 10^8/100 => 10^6 operations available
 O(N^3) maximum possible order since 100=>(10^2)^3=6
 
 upper bound O(N^3)
-lower bound: 
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+
+    int t;
+
+    cin>>t;
+
+    while(t--){
+  long long n,k;
+        
+  
+        cin>>n;
+        cin>>k;
+
+        vector<long long> arr(n,0);
+        for (int i=0;i<n;i++) cin >> arr[i];//n
+       
+        vector<long long> dup(arr);//n-create copy
+
+        sort(arr.begin(),arr.end());//nlogn
+
+        if (arr == dup) {  //n since equivalency
+            cout << "YES" << "\n";
+          }
+          else if (k > 1) {
+            cout << "YES" << "\n";
+          }
+          else {
+            cout << "NO" << "\n";
+          }
+     
+    }
+    return 0;
+}
+
+//O(nlogn)
+//log2(100) = 6.64 *100 = 664 operations
+//s(c) = O(N)
 
