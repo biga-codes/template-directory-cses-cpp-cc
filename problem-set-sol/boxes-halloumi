@@ -7,7 +7,11 @@ so totally 10^8/100 => 10^6 operations available
 O(N^3) maximum possible order since 100=>(10^2)^3=6
 
 upper bound O(N^3)
+if k=1 no reversals
+if k>2, then we know since atmost k, minimum 2 can be taken sub size
+so we always get for any arbitrary number of reversal operations.
 
+here number of operations is trivial
 
 #include <bits/stdc++.h>
 using namespace std;
