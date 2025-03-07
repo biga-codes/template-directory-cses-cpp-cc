@@ -1,0 +1,6 @@
+halloumi boxes: 
+suppose the time limit per test is 1 second
+test cases[t] : 1<=t<=100
+1 second => 10^8 operations
+so totally 10^8/100 => 10^6 operations available
+
