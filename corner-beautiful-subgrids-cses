@@ -1,0 +1,31 @@
+problem: beautiful-subgrids
+
+#pragma GCC target("popcnt")
+#include<bits/stdc++.h>
+using namespace std;
+
+#define int long long
+#define endl '\n'
+
+signed main(){
+    cin.tie(0)->sync_with_stdio(0);
+    #ifdef LOCAL
+    freopen("input.txt", "r" , stdin);
+    freopen("output.txt", "w", stdout);
+    #endif
+    
+    int n; cin >> n;
+    vector<bitset<3000>> v(n);
+    for (auto &i: v)
+        cin >> i;
+    int subgrids = 0;
+    int count=0;
+    for (int i = 0; i < n; i++) {
+        for (int j = i+1; j < n; j++) {
+            int count =(v[i]&v[j]).count();
+            subgrids += count * (count - 1) / 2;
+        }
+    }
+    cout << subgrids;
+    return 0;
+}
