@@ -1,0 +1,62 @@
+#include <iostream>
+#include <cstdio>
+#include <chrono>
+
+using namespace std;
+using namespace chrono;
+
+const int N = 1e6;  // 10^6 large input size
+
+void testCinCout() {
+    int x;
+    auto start = high_resolution_clock::now();
+
+    for (int i = 0; i < N; i++) {
+        cin >> x;
+    }
+
+    auto stop = high_resolution_clock::now();
+    cout << "cin/cout (default): " 
+         << duration_cast<milliseconds>(stop - start).count() 
+         << " ms" << endl;
+}
+
+void testSyncOffCinCout() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int x;
+    auto start = high_resolution_clock::now();
+
+    for (int i = 0; i < N; i++) {
+        cin >> x;
+    }
+
+    auto stop = high_resolution_clock::now();
+    cout << "cin/cout (sync off): " 
+         << duration_cast<milliseconds>(stop - start).count() 
+         << " ms" << endl;
+}
+
+void testScanfPrintf() {
+    int x;
+    auto start = high_resolution_clock::now();
+
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &x);
+    }
+
+    auto stop = high_resolution_clock::now();
+    printf("scanf/printf: %lld ms\n", 
+        duration_cast<milliseconds>(stop - start).count());
+}
+
+int main() {
+    freopen("input.txt", "r", stdin);  // Redirects input from file for large input
+
+    testCinCout();       // Default cin/cout
+    testSyncOffCinCout(); // Optimized cin/cout
+    testScanfPrintf();    // Using scanf/printf
+
+    return 0;
+}
