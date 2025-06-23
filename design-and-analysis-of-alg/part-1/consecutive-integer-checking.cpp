@@ -14,7 +14,7 @@ int consecutiveInteger(int m, int n){
     while(!(m % t == 0 && n % t == 0)){
         t--;
     }
-  // First common divisor from high to low is the GCD
+  // First common divisor from high to lowv is the GCD
   // for GCD, we need t to divide both m and n — so it should be: 
   return 1;
 }
