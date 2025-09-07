@@ -1,0 +1,98 @@
+@user: GopikaCodes
+
+Problem A:
+
+#include<iostream>
+
+using namespace std;
+
+int main(void)
+{
+ ios::sync_with_stdio(false); cin.tie(0);
+  long long n;
+int t;
+cin>>t;
+while(t--){
+
+ int a,b;
+  cin >> k>>n;
+  for(int i=0;i<k;i++)
+  {
+    if (n%2 ==0)
+      n*=2;
+    if ((n - 1) % 3 == 0 && ((n - 1) / 3) % 2 == 1)
+      n = (n - 1)/3;
+    else
+      n *= 2;
+  }
+    cout << n<<"\n";
+  
+}
+  return (0);
+}
+
+Problem B:
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+int main(void)
+{
+ ios::sync_with_stdio(false); cin.tie(0);
+  long long n;
+int t;
+cin>>t;
+while(t--){
+long long maxi=-1;
+ long long a,b;
+  cin >> a>>b;
+
+  for(long long k=1;k*k<=b;k++)
+  {
+  
+  if(b%k ==0){
+     long long sum1,sum2;
+    sum1= (a*k) + (b/k) ;
+    if(sum1%2==0){
+  maxi=max(maxi,sum1);
+  }
+
+  sum2= (a*(b/k))+ k;
+   if(sum2%2==0){
+  maxi=max(maxi,sum2);
+  }
+  }
+  else break;
+  
+    
+  }
+
+    cout << maxi<<"\n";
+  
+}
+  return (0);
+}
+
+Problem C:
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> p(n);
+        for (int &x : p) cin >> x;
+        for (int i = 0; i < n; ++i) {
+            int q = (n + 1) - p[i];  
+            cout << q << (i + 1 == n ? '\n' : ' ');
+        }
+    }
+    return 0;
+}
